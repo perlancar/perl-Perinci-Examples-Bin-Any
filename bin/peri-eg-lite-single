@@ -1,0 +1,67 @@
+#!perl
+
+# DATE
+# VERSION
+
+use 5.010;
+use strict;
+use warnings;
+
+our %SPEC;
+
+$SPEC{single} = {
+    v => 1.1,
+    summary => 'A function',
+    args => {
+        arg1 => {
+            schema => 'int*',
+            pos => 0,
+        },
+        arg2 => {
+            schema => 'int*',
+            pos => 1,
+        },
+        op => {
+            summary => 'Operation to apply to arg1 & arg2',
+            schema  => ['str*', in => [qw/multiply subtract add divide/]],
+            req     => 1,
+        },
+    },
+};
+sub single {
+    my %args = @_;
+
+    # we need to do validation ourselves because P::C::Lite currently doesn't do
+    # it for us.
+    my $op = $args{op} or return [400, "Please specify op"];
+    $op =~ /\A(multiply|subtract|add|divide)\z/ or return [400, "Invalid op"];
+    my $a1 = $args{arg1}; !defined($a1) || $a1 =~ /\A[+-]?\d+\z/
+        or return [400, "Invalid arg1 (not an integer)"];
+    my $a2 = $args{arg2}; !defined($a2) || $a2 =~ /\A[+-]?\d+\z/
+        or return [400, "Invalid arg1 (not an integer)"];
+
+    if ($op eq 'multiply') {
+        defined($a1) && defined($a2) or return [400, "arg1 & arg2 required"];
+        [200, "OK", $a1 * $a2];
+    } elsif ($op eq 'subtract') {
+        defined($a1) && defined($a2) or return [400, "arg1 & arg2 required"];
+        [200, "OK", $a1 - $a2];
+    } elsif ($op eq 'add') {
+        defined($a1) && defined($a2) or return [400, "arg1 & arg2 required"];
+        [200, "OK", $a1 + $a2];
+    } elsif ($op eq 'divide') {
+        defined($a1) && defined($a2) or return [400, "arg1 & arg2 required"];
+        $a2 == 0 and return [500, "Division by zero"];
+        [200, "OK", $a1 / $a2];
+    }
+}
+
+use Perinci::CmdLine::Lite;
+Perinci::CmdLine::Lite->new(url=>'/main/single')->run;
+
+# ABSTRACT: Test a single function (no subcommands)
+# PODNAME: peri-eg-lite-single
+
+=head1 SYNOPSIS
+
+=cut
