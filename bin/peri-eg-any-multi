@@ -58,24 +58,25 @@ _
             pos => 1,
         },
     },
-    args_as => 'array',
+    # not yet supported by P::C::Lite
+    #args_as => 'array',
     result_naked => 1,
 };
 sub subtract {
-    my ($a1, $a2) = @_;
+    my %args = @_;
 
     # we need to do validation ourselves because P::C::Lite currently doesn't do
     # it for us.
-    defined($a1) or die [400, "Please specify arg1"];
+    my $a1 = $args{a1}; defined($a1) or die [400, "Please specify arg1"];
     $a1 =~ /\A[+-]?\d+\z/ or die [400, "Invalid arg1 (not an int)"];
-    defined($a2) or die [400, "Please specify arg2"];
+    my $a2 = $args{a2}; defined($a2) or die [400, "Please specify arg2"];
     $a2 =~ /\A[+-]?\d+\z/ or die [400, "Invalid arg2 (not an int)"];
 
     $a1 - $a2;
 }
 
-use Perinci::CmdLine::Lite;
-Perinci::CmdLine::Lite->new(
+use Perinci::CmdLine::Any;
+Perinci::CmdLine::Any->new(
     url          => '/main/',
     subcommands  => {
         add      => {url => '/main/add'},
@@ -84,7 +85,7 @@ Perinci::CmdLine::Lite->new(
 )->run;
 
 # ABSTRACT: Test command with multiple subcommands
-# PODNAME: peri-eg-lite-multi
+# PODNAME: peri-eg-any-multi
 
 =head1 SYNOPSIS
 
