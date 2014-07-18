@@ -12,16 +12,25 @@ our %SPEC;
 $SPEC{add} = {
     v => 1.1,
     summary => 'A function to add to ints',
+    description => <<'_',
+
+Just a dummy description. Just a dummy description. Yup, just a dummy
+description. Just a dummy description. Just a dummy description. Yeah, just a
+dummy description. Just a dummy description.
+
+_
     args => {
         arg1 => {
             schema => 'int*',
             req => 1,
             pos => 0,
+            cmdline_aliases => { a=>{} },
         },
         arg2 => {
             schema => 'int*',
             req => 1,
             pos => 1,
+            cmdline_aliases => { b=>{} },
         },
     },
 };
@@ -51,11 +60,13 @@ _
             schema => 'int*',
             req => 1,
             pos => 0,
+            cmdline_aliases => { a=>{} },
         },
         arg2 => {
             schema => 'int*',
             req => 1,
             pos => 1,
+            cmdline_aliases => { b=>{} },
         },
     },
     # not yet supported by P::C::Lite

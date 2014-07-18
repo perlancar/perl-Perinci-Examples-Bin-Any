@@ -12,19 +12,31 @@ our %SPEC;
 $SPEC{single} = {
     v => 1.1,
     summary => 'A function',
+    description => <<'_',
+
+Just a dummy description. Just a dummy description. Yup, just a dummy
+description. Just a dummy description. Just a dummy description. Yeah, just a
+dummy description. Just a dummy description.
+
+_
     args => {
         arg1 => {
             schema => 'int*',
             pos => 0,
+            cmdline_aliases => { a=>{} },
         },
         arg2 => {
             schema => 'int*',
             pos => 1,
+            cmdline_aliases => { b=>{} },
         },
         op => {
             summary => 'Operation to apply to arg1 & arg2',
             schema  => ['str*', in => [qw/multiply subtract add divide/]],
             req     => 1,
+            cmdline_aliases => {
+                minus => { schema=>'bool', summary => 'Alias for --op=subtract', code=>sub {$_[0]{op} = 'minus'} },
+            },
         },
     },
 };
