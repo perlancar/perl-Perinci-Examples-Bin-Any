@@ -72,7 +72,7 @@ use Perinci::CmdLine::Any;
 Perinci::CmdLine::Any->new(url=>'/main/single')->run;
 
 # ABSTRACT: Test a single function (no subcommands)
-# PODNAME: peri-eg-any-single
+# PODNAME: peri-eg-single-any
 
 =head1 SYNOPSIS
 

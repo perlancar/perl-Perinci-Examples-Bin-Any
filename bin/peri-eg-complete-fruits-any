@@ -7,7 +7,7 @@ use Perinci::CmdLine::Any;
 Perinci::CmdLine::Any->new(url=>'/Perinci/Examples/Completion/fruits')->run;
 
 # ABSTRACT: A script to test completing array argument's elements
-# PODNAME: peri-eg-any-complete-fruits
+# PODNAME: peri-eg-complete-fruits-any
 
 =head1 SYNOPSIS
 

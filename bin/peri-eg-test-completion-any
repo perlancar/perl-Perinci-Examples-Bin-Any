@@ -7,7 +7,7 @@ use Perinci::CmdLine::Any;
 Perinci::CmdLine::Any->new(url=>'/Perinci/Examples/test_completion')->run;
 
 # ABSTRACT: A script to test bash completion
-# PODNAME: peri-eg-any-test-completion
+# PODNAME: peri-eg-test-completion-any
 
 =head1 SYNOPSIS
 

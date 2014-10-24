@@ -96,7 +96,7 @@ Perinci::CmdLine::Any->new(
 )->run;
 
 # ABSTRACT: Test command with multiple subcommands
-# PODNAME: peri-eg-any-multi
+# PODNAME: peri-eg-multi-any
 
 =head1 SYNOPSIS
 
