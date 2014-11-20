@@ -1,5 +1,10 @@
 Revision history for Perinci-Examples-Bin-Any
 
+0.04    2014-11-20 (PERLANCAR)
+
+	- Add script: peri-eg-demo-cli-opts-any.
+
+
 0.03    2014-10-24 (PERLANCAR)
 
 	- Add script: peri-eg-gen-random-bytes-any.
