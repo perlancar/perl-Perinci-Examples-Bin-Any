@@ -1,5 +1,7 @@
 #!perl
 
+# NO_PWP_RINCI
+
 # DATE
 # VERSION
 
@@ -71,8 +73,8 @@ sub single {
 use Perinci::CmdLine::Any;
 Perinci::CmdLine::Any->new(url=>'/main/single')->run;
 
-# ABSTRACT: Test a single function (no subcommands)
-# PODNAME: peri-eg-single-any
+# ABSTRACT: Test a single function (no subcommands) (function embedded in script)
+# PODNAME: peri-eg-single-embedded-any
 
 =head1 SYNOPSIS
 
