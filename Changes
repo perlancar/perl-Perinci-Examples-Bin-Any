@@ -1,5 +1,11 @@
 Revision history for Perinci-Examples-Bin-Any
 
+0.05    2014-11-21 (PERLANCAR)
+
+	- Rename/add scripts: peri-eg-{multi,single}-embedded-any (as well
+	  add the non-embedded version).
+
+
 0.04    2014-11-20 (PERLANCAR)
 
 	- Add script: peri-eg-demo-cli-opts-any.
