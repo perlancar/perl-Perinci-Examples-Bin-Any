@@ -16,4 +16,4 @@ Perinci::CmdLine::Any->new(
 )->run;
 
 # ABSTRACT: Test command with multiple subcommands
-# PODNAME: peri-eg-multi-any
+# PODNAME:
