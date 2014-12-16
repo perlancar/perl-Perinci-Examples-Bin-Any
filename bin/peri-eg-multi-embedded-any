@@ -11,6 +11,11 @@ use warnings;
 
 our %SPEC;
 
+$SPEC{':package'} = {
+    v => 1.1,
+    summary => 'Test command with multiple subcommands (function embedded in script)',
+};
+
 $SPEC{add} = {
     v => 1.1,
     summary => 'A function to add to ints',
@@ -97,7 +102,7 @@ Perinci::CmdLine::Any->new(
     },
 )->run;
 
-# ABSTRACT: Test command with multiple subcommands (function embedded in script)
+# ABSTRACT: 
 # PODNAME:
 
 =head1 SYNOPSIS

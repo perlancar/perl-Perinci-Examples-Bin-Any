@@ -71,9 +71,12 @@ sub single {
 }
 
 use Perinci::CmdLine::Any;
-Perinci::CmdLine::Any->new(url=>'/main/single')->run;
+Perinci::CmdLine::Any->new(
+    summary => 'Test a single function (no subcommands) (function embedded in script)',
+    url=>'/main/single',
+)->run;
 
-# ABSTRACT: Test a single function (no subcommands) (function embedded in script)
+# ABSTRACT: 
 # PODNAME:
 
 =head1 SYNOPSIS
