@@ -9,6 +9,11 @@ use warnings;
 
 our %SPEC;
 
+$SPEC{':package'} = {
+    v => 1.1,
+    summary => 'Functions to be used by peri-eg-multi-any',
+};
+
 $SPEC{add} = {
     v => 1.1,
     summary => 'A function to add to ints',
@@ -86,4 +91,4 @@ sub subtract {
     $a1 - $a2;
 }
 
-# ABSTRACT: Functions to be used by peri-eg-multi-any
+# ABSTRACT:
