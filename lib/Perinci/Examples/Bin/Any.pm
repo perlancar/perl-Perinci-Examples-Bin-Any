@@ -14,12 +14,9 @@ This distribution contains example scripts in C<bin/> which use
 L<Perinci::CmdLine::Any>.
 
 
-=head1 FAQ
+=head1 SEE ALSO
 
-=head2 Where are examples using Perinci::CmdLine::Lite?
+L<Perinci::Examples::Bin::Classic>
 
-You can use the scripts in this distribution, and run them with:
+L<Perinci::Examples::Bin::Lite>
 
- % PERINCI_CMDLINE_ANY=Perinci::CmdLine::Lite script ...
-
-=cut
