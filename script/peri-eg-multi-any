@@ -10,11 +10,12 @@ use warnings;
 use Perinci::CmdLine::Any;
 Perinci::CmdLine::Any->new(
     summary => 'Test command with multiple subcommands',
+    url => '/Perinci/Examples/Bin/Any/Multi/',
     subcommands  => {
         add      => {url => '/Perinci/Examples/Bin/Any/Multi/add'},
         subtract => {url => '/Perinci/Examples/Bin/Any/Multi/subtract'},
     },
 )->run;
 
-# ABSTRACT: 
+# ABSTRACT:
 # PODNAME:

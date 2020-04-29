@@ -91,4 +91,5 @@ sub subtract {
     $a1 - $a2;
 }
 
+1;
 # ABSTRACT:
